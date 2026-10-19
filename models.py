@@ -2,17 +2,10 @@
 from __future__ import annotations
 
 from typing import get_type_hints
-
 from .core import ValidationError
 
-
 class BaseModel:
-    """Minimal model with required annotated fields and strict basic types.
-
-    Subclasses declare fields using annotations and can define class defaults.
-    This is intentionally small; it is not a replacement for a schema library.
-    """
-
+    """Minimal model with required annotated fields and strict basic types."""
     def __init__(self, **kwargs):
         hints = {}
         for cls in reversed(type(self).__mro__):
